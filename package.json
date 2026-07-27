@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "@keystatic/astro": "^5.1.0",
-    "@keystatic/core": "^0.5.50",
+    "@keystatic/core": "^0.0.46",
     "@markdoc/markdoc": "^0.5.7",
     "@tailwindcss/vite": "^4.3.0",
-    "astro": "^6.4.4",
+    "astro": "^7.1.4",
     "tailwindcss": "^4.3.0"
   }
 }

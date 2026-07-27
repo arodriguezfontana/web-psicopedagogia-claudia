@@ -1,18 +1,25 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
-import Autoridad from "../components/Autoridad.astro";
-import SobreMi from "../components/SobreMi.astro";
-import Servicios from "../components/Servicios.astro";
-import Contacto from "../components/Contacto.astro";
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Services from '../components/Services.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+
+const title = "Lic. Claudia Fontana | Psicopedagoga en Quilmes y Online";
+const description = "Acompañamiento psicopedagógico para niños, niñas y adolescentes. Evaluación, diagnóstico, orientación a familias y supervisión clínica para colegas.";
 ---
 
-<Layout title="Lic. Claudia Fontana - Psicopedagoga">
-	<main class="max-w-5xl mx-auto px-4 py-12">
+<Layout title={title} description={description}>
+	<Header />
+
+	<main>
 		<Hero />
-		<Autoridad />
-		<SobreMi />
-		<Servicios />
-		<Contacto />
+		<About />
+		<Services />
 	</main>
+
+	<Footer />
+	<FloatingWhatsApp />
 </Layout>
