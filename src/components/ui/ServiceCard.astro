@@ -1,0 +1,64 @@
+---
+import Button from './Button.astro';
+
+interface ServiceItem {
+    title: string;
+    description: string;
+}
+
+interface Props {
+    icon: string;
+    title: string;
+    description: string;
+    items: ServiceItem[];
+    whatsappUrl: string;
+    buttonText: string;
+    variant?: 'teal' | 'slate';
+}
+
+const { 
+    icon, 
+    title, 
+    description, 
+    items, 
+    whatsappUrl, 
+    buttonText, 
+    variant = 'teal' 
+} = Astro.props;
+
+const iconBg = variant === 'teal' ? 'bg-teal-600 text-white shadow-teal-600/20' : 'bg-slate-900 text-white shadow-slate-900/20';
+const checkColor = variant === 'teal' ? 'text-teal-600' : 'text-slate-900';
+---
+
+<div class="bg-slate-50 border border-slate-200/80 rounded-3xl p-8 sm:p-10 shadow-sm flex flex-col justify-between h-full">
+    <div>
+        <div class={`inline-flex items-center justify-center p-3 rounded-2xl mb-6 shadow-md ${iconBg}`}>
+            <span class="text-2xl">{icon}</span>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">{title}</h3>
+        <p class="text-slate-600 mb-8 leading-relaxed">
+            {description}
+        </p>
+
+        <ul class="space-y-4 mb-8 text-slate-700">
+            {items.map((item) => (
+                <li class="flex items-start gap-3">
+                    <span class={`font-bold mt-1 ${checkColor}`}>✓</span>
+                    <div>
+                        <strong class="text-slate-900 block">{item.title}</strong>
+                        <span class="text-sm text-slate-500">{item.description}</span>
+                    </div>
+                </li>
+            ))}
+        </ul>
+    </div>
+
+    <Button 
+        href={whatsappUrl} 
+        variant={variant === 'teal' ? 'primary' : 'secondary'} 
+        external={true}
+        class="w-full text-center"
+    >
+        {buttonText}
+    </Button>
+</div>

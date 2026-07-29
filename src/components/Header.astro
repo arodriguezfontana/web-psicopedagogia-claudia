@@ -1,12 +1,14 @@
 ---
-const whatsappUrl = "";
+import Button from './ui/Button.astro';
+
+const whatsappUrl = "https://wa.me/54911XXXXXXXX?text=Hola%20Claudia,%20estuve%20viendo%20tu%20web%20y%20quiero%20hacer%20una%20consulta.";
 ---
 
 <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
-        <a href="#" class="flex flex-col">
-            <span class="font-bold text-lg text-slate-900 tracking-tight">Lic. Claudia Fontana</span>
+        <a href="#" class="flex flex-col group">
+            <span class="font-bold text-lg text-slate-900 tracking-tight group-hover:text-teal-700 transition-colors">Lic. Claudia Fontana</span>
             <span class="text-xs text-teal-700 font-medium tracking-wide">Psicopedagoga</span>
         </a>
 
@@ -15,15 +17,15 @@ const whatsappUrl = "";
             <a href="#servicios" class="hover:text-teal-700 transition-colors">Servicios</a>
         </nav>
 
-        <div>
-            <a 
+        <div class="hidden sm:block">
+            <Button 
                 href={whatsappUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="hidden sm:inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-medium text-sm transition-all shadow-sm"
+                variant="primary" 
+                external={true}
+                class="py-2.5 px-4 text-sm shadow-none"
             >
                 WhatsApp
-            </a>
+            </Button>
         </div>
     </div>
 </header>

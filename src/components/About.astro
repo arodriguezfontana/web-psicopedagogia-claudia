@@ -1,4 +1,7 @@
 ---
+import Badge from './ui/Badge.astro';
+import InfoCard from './ui/InfoCard.astro';
+import QuoteCard from './ui/QuoteCard.astro';
 ---
 
 <section id="sobre-mi" class="py-20 lg:py-28 bg-slate-50 border-t border-slate-100">
@@ -6,9 +9,9 @@
         <div class="grid md:grid-cols-12 gap-12 items-center">
             
             <div class="md:col-span-7">
-                <span class="inline-block py-1 px-3 rounded-full bg-teal-100 text-teal-800 text-sm font-semibold mb-4">
+                <Badge variant="teal" class="mb-4">
                     Trayectoria y Experiencia
-                </span>
+                </Badge>
                 
                 <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-6">
                     Una mirada única que une el aula y la clínica.
@@ -24,34 +27,24 @@
                 </div>
 
                 <div class="mt-8 grid sm:grid-cols-2 gap-4">
-                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex items-start space-x-3">
-                        <div class="bg-teal-100 text-teal-800 p-2 rounded-lg font-bold text-sm">🎓</div>
-                        <div>
-                            <h3 class="font-semibold text-slate-900">Lic. en Psicopedagogía</h3>
-                            <p class="text-sm text-slate-500">Enfoque clínico y cognitivo</p>
-                        </div>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex items-start space-x-3">
-                        <div class="bg-teal-100 text-teal-800 p-2 rounded-lg font-bold text-sm">🍎</div>
-                        <div>
-                            <h3 class="font-semibold text-slate-900">Profesora Preescolar</h3>
-                            <p class="text-sm text-slate-500">37 años de experiencia docente</p>
-                        </div>
-                    </div>
+                    <InfoCard 
+                        icon="👩🏻‍🎓" 
+                        title="Lic. en Psicopedagogía" 
+                        description="Enfoque clínico y cognitivo" 
+                    />
+                    <InfoCard 
+                        icon="👩🏻‍🏫" 
+                        title="Profesora Preescolar" 
+                        description="37 años de experiencia docente" 
+                    />
                 </div>
             </div>
 
             <div class="md:col-span-5">
-                <div class="bg-teal-900 text-white p-8 sm:p-10 rounded-3xl shadow-xl relative overflow-hidden">
-                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-teal-800 rounded-full opacity-50 blur-2xl"></div>
-                    <span class="text-teal-300 text-6xl font-serif block mb-4">“</span>
-                    <p class="text-lg sm:text-xl font-medium leading-relaxed mb-6 relative z-10">
-                        Cada niño y adolescente tiene su propio ritmo de aprendizaje. El objetivo no es apresurarlos, sino darles las herramientas para que descubran su propio potencial.
-                    </p>
-                    <p class="text-teal-200 font-semibold text-sm">
-                        — Lic. Claudia Fontana
-                    </p>
-                </div>
+                <QuoteCard 
+                    quote="Cada niño y adolescente tiene su propio ritmo de aprendizaje. El objetivo no es apresurarlos, sino darles las herramientas para que descubran su propio potencial."
+                    author="Lic. Claudia Fontana"
+                />
             </div>
 
         </div>

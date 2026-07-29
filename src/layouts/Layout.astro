@@ -4,9 +4,16 @@ import '../styles/global.css';
 interface Props {
 	title: string;
 	description: string;
+	image?: string;
 }
 
-const { title, description } = Astro.props;
+const { 
+	title, 
+	description, 
+	image = "/images/claudia-fontana.jpeg" 
+} = Astro.props;
+
+const canonicalURL = "https://claudiafontanapsicopedagoga.com.ar"; 
 ---
 
 <!doctype html>
@@ -18,16 +25,58 @@ const { title, description } = Astro.props;
 		
 		<title>{title}</title>
 		<meta name="description" content={description} />
-		<!-- <link rel="canonical" href="https://claudiafontanapsicopedagoga.com.ar" />  -->
+		<link rel="canonical" href={canonicalURL} />
 
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:locale" content="es_AR" />
+		<meta property="og:image" content={new URL(image, canonicalURL)} />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={new URL(image, canonicalURL)} />
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "ProfessionalService",
+			"name": "Lic. Claudia Fontana | Psicopedagoga",
+			"image": new URL(image, canonicalURL),
+			"@id": canonicalURL,
+			"url": canonicalURL,
+			"telephone": "+54911XXXXXXXX", 
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Quilmes",
+				"addressRegion": "Buenos Aires",
+				"addressCountry": "AR"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": -34.7226,
+				"longitude": -58.2547
+			},
+			"priceRange": "$$",
+			"openingHoursSpecification": {
+				"@type": "OpeningHoursSpecification",
+				"dayOfWeek": [
+					"Monday",
+					"Tuesday",
+					"Wednesday",
+					"Thursday",
+					"Friday"
+				],
+				"opens": "08:00",
+				"closes": "18:00"
+			},
+			"sameAs": []
+		})} />
 	</head>
 	<body class="bg-slate-50 text-slate-800 font-['Plus_Jakarta_Sans',sans-serif] antialiased selection:bg-teal-100 selection:text-teal-900">
 		<slot />
