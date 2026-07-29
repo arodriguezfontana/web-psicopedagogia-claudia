@@ -1,0 +1,26 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-8 items-center justify-between">
+            
+            <div>
+                <span class="text-white font-bold text-lg block mb-1">Lic. Claudia Fontana</span>
+                <p class="text-slate-400 text-sm">
+                    Licenciada en Psicopedagogía • Profesora de Enseñanza Preescolar. <br>
+                    Acompañando infancias, adolescencias y prácticas profesionales.
+                </p>
+            </div>
+
+            <div class="md:text-right flex flex-col md:items-end gap-2 text-sm text-slate-400">
+                <p>Quilmes, Buenos Aires • Modalidad presencial y online</p>
+                <p class="text-xs text-slate-500">
+                    © {currentYear} Claudia Fontana. Todos los derechos reservados.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</footer>
