@@ -1,0 +1,24 @@
+---
+import StatItem from './ui/StatItem.astro';
+
+const stats = [
+    { number: "+37", label: "Años de trayectoria educativa", detail: "Docencia en niveles iniciales" },
+    { number: "+27", label: "Años de práctica clínica", detail: "Abordaje psicopedagógico" },
+    { number: "3 a 16", label: "Años de acompañamiento", detail: "Niños, niñas y adolescentes" },
+    { number: "100%", label: "Enfoque personalizado", detail: "Presencial (Quilmes) y Online" }
+];
+---
+
+<section class="bg-teal-900 text-white py-12 border-y border-teal-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            {stats.map((stat) => (
+                <StatItem 
+                    number={stat.number}
+                    label={stat.label}
+                    detail={stat.detail}
+                />
+            ))}
+        </div>
+    </div>
+</section>

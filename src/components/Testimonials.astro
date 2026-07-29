@@ -1,0 +1,49 @@
+---
+import Badge from './ui/Badge.astro';
+import TestimonialCard from './ui/TestimonialCard.astro';
+const testimonials = [
+    {
+        quote: "Encontrar a Claudia fue un antes y un después para nuestro hijo. Su calidez, paciencia y profesionalismo lograron que él recupere la confianza en el colegio. Estamos inmensamente agradecidos.",
+        author: "Mamá de paciente",
+        detail: "Tratamiento psicopedagógico (8 años)"
+    },
+    {
+        quote: "La claridad con la que nos explicó el diagnóstico y las pautas para trabajar en casa nos dio mucha tranquilidad a toda la familia. Se nota su enorme experiencia de tantos años.",
+        author: "Papá de paciente",
+        detail: "Evaluación y orientación a padres"
+    },
+    {
+        quote: "Las supervisiones con Claudia son un faro en mi práctica clínica. Su mirada que une el aula y la clínica me aporta herramientas prácticas y seguras para abordar casos complejos.",
+        author: "Lic. en Psicopedagogía",
+        detail: "Espacio de supervisión a colegas"
+    }
+];
+---
+
+<section class="py-20 lg:py-28 bg-slate-50 border-t border-slate-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <Badge variant="teal" class="mb-4">
+                Experiencia y Confianza
+            </Badge>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4">
+                Lo que dicen quienes confían en su trabajo
+            </h2>
+            <p class="text-lg text-slate-600">
+                Familias y colegas que transitaron el camino del aprendizaje junto a Claudia.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            {testimonials.map((item) => (
+                <TestimonialCard 
+                    quote={item.quote}
+                    author={item.author}
+                    detail={item.detail}
+                />
+            ))}
+        </div>
+
+    </div>
+</section>

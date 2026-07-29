@@ -1,0 +1,50 @@
+---
+import Badge from './ui/Badge.astro';
+import FaqItem from './ui/FaqItem.astro';
+
+const faqs = [
+    {
+        question: "¿A partir de qué edad se puede realizar una consulta psicopedagógica?",
+        answer: "Acompaño a niños, niñas y adolescentes desde los 3 hasta los 16 años. En las primeras infancias (jardín y primeros años de primaria), la detección temprana de dificultades en el desarrollo o el lenguaje es clave."
+    },
+    {
+        question: "¿Cómo es el proceso de evaluación y diagnóstico?",
+        answer: "Consta de una entrevista inicial con los padres, una serie de encuentros clínicos de evaluación con el niño/a para conocer sus recursos cognitivos y de aprendizaje, y finalmente una devolución con pautas claras y orientación."
+    },
+    {
+        question: "¿Las sesiones son presenciales o online?",
+        answer: "Ofrezco modalidad presencial en mi espacio en Quilmes (Buenos Aires) y modalidad online, lo que permite flexibilidad según la ubicación o las necesidades de las familias y colegas."
+    },
+    {
+        question: "¿Cómo son las supervisiones clínicas para colegas?",
+        answer: "Son espacios profesionales de intercambio basados en mis 37 años de trayectoria. Analizamos casos complejos, procesos diagnósticos, armado de estrategias de abordaje y devoluciones a instituciones escolares."
+    }
+];
+---
+
+<section id="preguntas-frecuentes" class="py-20 lg:py-28 bg-white border-t border-slate-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <Badge variant="teal" class="mb-4">
+                Dudas Habituales
+            </Badge>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4">
+                Preguntas Frecuentes
+            </h2>
+            <p class="text-lg text-slate-600">
+                Todo lo que necesitás saber antes de coordinar un espacio de consulta o supervisión.
+            </p>
+        </div>
+
+        <div class="space-y-4">
+            {faqs.map((faq) => (
+                <FaqItem 
+                    question={faq.question}
+                    answer={faq.answer}
+                />
+            ))}
+        </div>
+
+    </div>
+</section>
